@@ -1,33 +1,10 @@
-﻿/* Вариант решения с заполнением массива с клавиатуры:
-// Задаю количество строк массива и заполняю его строками
-Console.Write("Введите количество строк: ");
-int n = int.Parse(Console.ReadLine()!);
-string[] array = new string[n];
-for (int i = 0; i < n; i++)
-{
-    Console.Write($"Введите строку {i + 1}: ");
-    array[i] = Console.ReadLine()!;
-}
-// Создаю новый массив строк и инициализирую его пустыми значениями.
-string[] result = new string[n];
-int k = 0;
-//Проход по каждой строке из исходного массива: 
-//цикл выполняется, если длина текущей строки меньше или равна 3 символам. Если условие выполняется, то строка добавляется в новый массив строк.
-for (int i = 0; i < n; i++)
-{
-    if (array[i].Length <= 3)
-    {
-        result[k] = array[i];
-        k++;
-    }
-}
-// Вывод результата
-Console.WriteLine("-> ");
-for (int i = 0; i < k; i++)
-{
-    Console.WriteLine(result[i]);
-}
+﻿/* Задача:
+Написать программу, которая из имеющегося массива строк формирует массив из строк, 
+длина которых меньше либо равна 3 символа. Первоначальный массив можно ввести с клавиатуры, 
+либо задать на старте выполнения алгоритма. При решении не рекомендуется пользоваться коллекциями, 
+лучше обойтись исключительно массивами.
  */
+
 // Вариант решения с заданным на старте выполнения массивом {"hello", "2", "world", ":-)"}
 string[] startArray = new string[4] {"hello", "2", "world", ":-)"};
 String.Join(", ", startArray); 
@@ -50,8 +27,10 @@ void ResultArray(string[] startArray, string[] resultArray)
 //Метод вывода массива
 void PrintArray(string[] array)
 {
-    for (int i = 0; i < array.Length; i++)
-    Console.Write($"{array[i]}");
+    Console.Write("[");
+    for (int i = 0; i < array.Length - 1; i++)
+    Console.Write($"{array[i]}, ");
+    Console.Write($"{array[startArray.Length - 1]}]");
 }
 
 // Вызываю методы
